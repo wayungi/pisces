@@ -1,5 +1,5 @@
 import React from 'react';
-import Fish from '../../resources/images/fish.jpg';
+import Fish from '../../images/fish.jpg';
 
 const FishScreen = () => {
   return (
