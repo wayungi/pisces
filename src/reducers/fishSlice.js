@@ -17,7 +17,7 @@ export const fishSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchFish.fulfilled, (state, action) => {
-      state.push(action.payload)
+      return action.payload;
     })
   },
 });
