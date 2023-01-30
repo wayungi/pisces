@@ -1,5 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
+import fishReducer from './fishSlice';
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    fish: fishReducer,
+  },
 })
