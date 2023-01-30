@@ -23,5 +23,5 @@ export const fishSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const selectAllFish = (state) => state;
+export const selectAllFish = (state) => state.fish;
 export default fishSlice.reducer
