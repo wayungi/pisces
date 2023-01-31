@@ -26,7 +26,7 @@ const FishGrid = () => {
 
   return (
     <section>
-      {fishPanels}
+      { fishPanels }
       <button><GrFormPrevious onClick={() => prev()}/></button>
       <button><GrFormNext onClick={() => next()}/></button>
     </section>
