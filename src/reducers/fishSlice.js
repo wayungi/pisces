@@ -1,7 +1,9 @@
 import { createSlice,  createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const baseUrl = 'https://www.fishwatch.gov/api/species';
+// project base url : https://www.fishwatch.gov/api/species'
+// json server url:   http://localhost:3001/fish
+const baseUrl = 'http://localhost:3001/fish';
 const initialState = [];
 
 

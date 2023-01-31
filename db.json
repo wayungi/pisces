@@ -1,4 +1,5 @@
-[
+{
+  "fish": [
     {
       "Fishery Management": "<ul>\n<li><a href=\"https://www.fisheries.noaa.gov/region/pacific-islands\">NOAA Fisheries</a> and the <a href=\"https://www.wpcouncil.org/\">Western Pacific Fishery Management Council</a> manage crimson jobfish&nbsp;in the United States.&nbsp;&nbsp;</li>\n<li>Managed under Fishery Ecosystem Plans for <a href=\"https://www.wpcouncil.org/fisheries/american-samoa-archipelago/\">American Samoa</a>, <a href=\"https://www.wpcouncil.org/fisheries/hawaii-archipelago/\">Hawaii Archipelago</a>, <a href=\"https://www.wpcouncil.org/fisheries/northern-mariana-islands-mariana-archipelago/\">Mariana Archipelago</a>, and the&nbsp;<a href=\"https://www.wpcouncil.org/fisheries/pacific-remote-islands/\">Pacific Remote Island Areas</a>.\n<ul>\n<li>Crimson jobfish are managed as part of multispecies stock complexes under these five ecosystem plans. There are annual catch limits in place for these five stock complexes.&nbsp;</li>\n<li>Commercial fishermen are required to have permits to fish in federal waters and report their catch.</li>\n<li>Recreational fishermen fishing in federal waters for Hawaii bottomfish are required to have permits and record their catch. There are no permit or reporting requirements for recreational fishermen fishing in federal waters for Guam, American Samoa, and Northern Mariana Islands bottomfish, but there are prohibited gear types and harvest techniques. Non-commercial fishing is prohibited within 12 nm of emergent land within the Pacific Remote Islands Marine National Monument.&nbsp;&nbsp;</li>\n<li>Gear restrictions and operational requirements are in place to minimize bycatch and potential gear conflicts among different fisheries.</li>\n<li>A rebuilding plan was implemented in 2022 with the goal of rebuilding the American Samoa Bottomfish Multi-species Complex, of which crimson jobfish&nbsp;is a member, by 2032.</li>\n<li>A rebuilding plan was implemented in 2022 with the goal of rebuilding the Guam Bottomfish Multi-species Complex, of which crimson jobfish&nbsp;is a member, by 2031.</li>\n</ul>\n</li>\n</ul>\n",
       "Habitat": null,
@@ -9812,3 +9813,4 @@
       "last_update": "01/19/2023 - 17:28"
     }
   ]
+}
