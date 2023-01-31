@@ -19,11 +19,15 @@ const FishPanel = ({ fish }) => {
 
     const nextImage = () => {
         if (images.length > 1 && index !== images.length) {
-            setImage(images[index++]);
+            setImage(images[index + 1]);
         }
     }
 
-  
+    const prevImage = () => {
+        if(index > 0) {
+            setImage(images[index - 1]);
+        }
+    }
 
 
 
