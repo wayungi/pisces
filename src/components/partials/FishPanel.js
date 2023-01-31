@@ -6,7 +6,6 @@ import {GrFormNext, GrFormPrevious} from 'react-icons/gr';
 
 const FishPanel = ({ fish }) => {
     let images = [];
-    let index = 0;
     if (fish['Image Gallery'] === null) {
         images.push({src: ""});
     }else if ( Array.isArray(fish['Image Gallery'])){
@@ -15,30 +14,15 @@ const FishPanel = ({ fish }) => {
         images = [fish['Image Gallery']]
     }
 
-    const [image, setImage] = useState(images[index].src);
-
-    const nextImage = () => {
-        if (images.length > 1 && index !== images.length) {
-            setImage(images[index + 1]);
-        }
-    }
-
-    const prevImage = () => {
-        if(index > 0) {
-            setImage(images[index - 1]);
-        }
-    }
-
-
-
-  
-
+    const [index, setIndex] = useState(0);
+    const nextImage = () => (index < images.length-1) ? setIndex((prevIndex) => prevIndex + 1) : index;
+    const prevImage = () => (index > 0) ?  setIndex((prevIndex) => prevIndex - 1) : index;
 
   return (
     <article>
         <h2>{fish['Species Name']}</h2>
         <div>
-            <img src={image} alt="fish images" />
+            <img src={images[index].src} alt="fish images" />
             <div>
                 <button type="button"><GrFormPrevious onClick={()=> prevImage()}/></button>
                 <button type="button"><GrFormNext onClick={()=> nextImage()}/></button>
