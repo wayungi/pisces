@@ -24,6 +24,9 @@ export const fishSlice = createSlice({
   },
 });
 
+
 // Action creators are generated for each case reducer function
 export const selectAllFish = (state) => state.fish;
+export const selectFish = (state, species) => state.fish.find(x => x["Scientific Name"] === species)
+
 export default fishSlice.reducer
