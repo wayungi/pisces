@@ -1,9 +1,9 @@
 /** @format */
 
 import React, { useState } from 'react';
-import missing from '../../images/missing.jpg';
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 import { Link } from 'react-router-dom';
+import missing from '../../images/missing.jpg';
 
 const FishPanel = ({ fish }) => {
   let images = [];
@@ -16,10 +16,8 @@ const FishPanel = ({ fish }) => {
   }
 
   const [index, setIndex] = useState(0);
-  const nextImage = () =>
-    index < images.length - 1 ? setIndex((prevIndex) => prevIndex + 1) : index;
-  const prevImage = () =>
-    index > 0 ? setIndex((prevIndex) => prevIndex - 1) : index;
+  const nextImage = () => (index < images.length - 1 ? setIndex((prevIndex) => prevIndex + 1) : index);
+  const prevImage = () => (index > 0 ? setIndex((prevIndex) => prevIndex - 1) : index);
 
   return (
     <article>
@@ -37,10 +35,14 @@ const FishPanel = ({ fish }) => {
           </div>
         </div>
         <p>
-          Scientific name: <span>{fish['Scientific Name']}</span>
+          Scientific name:
+          {' '}
+          <span>{fish['Scientific Name']}</span>
         </p>
         <p>
-          NOAA Fisherires region: <span>{fish['NOAA Fisheries Region']}</span>
+          NOAA Fisherires region:
+          {' '}
+          <span>{fish['NOAA Fisheries Region']}</span>
         </p>
       </Link>
     </article>

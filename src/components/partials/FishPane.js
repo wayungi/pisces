@@ -12,25 +12,23 @@ const FishPane = ({ fish }) => {
   }
 
   const [index, setIndex] = useState(0);
-  const nextImage = () =>
-    index < images.length - 1 ? setIndex((prevIndex) => prevIndex + 1) : index;
-  const prevImage = () =>
-    index > 0 ? setIndex((prevIndex) => prevIndex - 1) : index;
+  const nextImage = () => (index < images.length - 1 ? setIndex((prevIndex) => prevIndex + 1) : index);
+  const prevImage = () => (index > 0 ? setIndex((prevIndex) => prevIndex - 1) : index);
 
   return (
     <article>
-        <h2>{fish['Species Name']}</h2>
+      <h2>{fish['Species Name']}</h2>
+      <div>
+        <img src={images[index].src} alt="fish images" />
         <div>
-          <img src={images[index].src} alt="fish images" />
-          <div>
-            <button type="button">
-              <GrFormPrevious onClick={() => prevImage()} />
-            </button>
-            <button type="button">
-              <GrFormNext onClick={() => nextImage()} />
-            </button>
-          </div>
+          <button type="button">
+            <GrFormPrevious onClick={() => prevImage()} />
+          </button>
+          <button type="button">
+            <GrFormNext onClick={() => nextImage()} />
+          </button>
         </div>
+      </div>
     </article>
   );
 };

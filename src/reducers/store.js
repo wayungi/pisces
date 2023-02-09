@@ -1,8 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit';
 import fishReducer from './fishSlice';
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
     fish: fishReducer,
   },
-})
+});
+
+export default store;
