@@ -27,8 +27,12 @@ const FishGrid = () => {
   return (
     <section>
       { fishPanels }
-      <button><GrFormPrevious onClick={() => prev()} /></button>
-      <button><GrFormNext onClick={() => next()} /></button>
+      <button type="button" onClick={() => prev()}>
+        <GrFormPrevious />
+      </button>
+      <button type="button" onClick={() => next()}>
+        <GrFormNext />
+      </button>
     </section>
   );
 };
