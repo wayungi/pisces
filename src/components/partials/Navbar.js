@@ -2,9 +2,11 @@ import React from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { CiSearch } from 'react-icons/ci';
 import logo from '../../images/logo.png';
+import Model from './Model';
 
 const Navbar = () => (
   <nav>
+    <Model />
     <ul className="flex flex-row items-center">
       <li className="mx-3 cursor-pointer"><GiHamburgerMenu /></li>
       <li className="grow">
