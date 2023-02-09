@@ -5,7 +5,7 @@ import {GrFormNext, GrFormPrevious} from 'react-icons/gr';
 import FishPanel from './FishPanel';
 
 const FishGrid = () => {
-  const fishArray =  useSelector(selectAllFish);
+  const fishArray =  useSelector(selectAllFish); //useSelector(selectAll(state) => state.fish)
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(10); 
   const fishPaginatedList = fishArray.slice(start, end);  
