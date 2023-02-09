@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
+import PropTypes from 'prop-types';
 
 const FishPane = ({ fish }) => {
   let images = [];
@@ -12,7 +13,9 @@ const FishPane = ({ fish }) => {
   }
 
   const [index, setIndex] = useState(0);
-  const nextImage = () => (index < images.length - 1 ? setIndex((prevIndex) => prevIndex + 1) : index);
+  const nextImage = () => (
+    index < images.length - 1 ? setIndex((prevIndex) => prevIndex + 1) : index
+  );
   const prevImage = () => (index > 0 ? setIndex((prevIndex) => prevIndex - 1) : index);
 
   return (
@@ -31,6 +34,15 @@ const FishPane = ({ fish }) => {
       </div>
     </article>
   );
+};
+
+FishPane.propTypes = {
+  fish: PropTypes.shape(
+    {
+      'Image Gallery': PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string])),
+      'Species Name': PropTypes.string.isRequired,
+    },
+  ).isRequired,
 };
 
 export default FishPane;
