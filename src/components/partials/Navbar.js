@@ -5,16 +5,16 @@ import logo from '../../images/logo.png';
 
 const Navbar = () => (
   <nav>
-    <ul>
-      <li><GiHamburgerMenu /></li>
-      <li><img src={logo} alt="fish logo" /></li>
-      <li>
-        <form>
-          <input type="text" />
-          <CiSearch />
+    <ul className="flex flex-row items-center">
+      <li className="mx-3"><GiHamburgerMenu /></li>
+      <li className="grow">
+        <form className="flex flex-row border-solid border-2 border-gray-400 rounded-sm items-center pr-1">
+          <input type="text" className="py-2 px-2 h-6 box-border focus:outline-none grow" />
+          <CiSearch className="" />
         </form>
       </li>
-      <li>Home</li>
+      <li><img src={logo} alt="fish logo" className="h-10 px-1 mr-1" /></li>
+      <li className="hidden">Home</li>
     </ul>
   </nav>
 );
