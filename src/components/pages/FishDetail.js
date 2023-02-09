@@ -1,17 +1,16 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { selectFish } from '../../reducers/fishSlice';
 import parse  from 'html-react-parser';
+import FishPane from '../partials/FishPane';
+import { selectFish } from '../../reducers/fishSlice';
 
 const FishDetail = () => {
   const { species } = useParams();
   const fish =  useSelector((state) => selectFish(state, species));
   return (
     <section>
-        <div>
-
-        </div>
+        <FishPane fish={fish}/>
         <div>
           <p>Fishery management</p>
           {parse(fish["Fishery Management"])} 
