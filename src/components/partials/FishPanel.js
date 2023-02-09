@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 import { Link } from 'react-router-dom';
-import missing from '../../images/missing.jpg';
+import PropTypes from 'prop-types';
 
 const FishPanel = ({ fish }) => {
   let images = [];
@@ -16,7 +16,9 @@ const FishPanel = ({ fish }) => {
   }
 
   const [index, setIndex] = useState(0);
-  const nextImage = () => (index < images.length - 1 ? setIndex((prevIndex) => prevIndex + 1) : index);
+  const nextImage = () => (
+    index < images.length - 1 ? setIndex((prevIndex) => prevIndex + 1) : index
+  );
   const prevImage = () => (index > 0 ? setIndex((prevIndex) => prevIndex - 1) : index);
 
   return (
@@ -47,6 +49,17 @@ const FishPanel = ({ fish }) => {
       </Link>
     </article>
   );
+};
+
+FishPanel.propTypes = {
+  fish: PropTypes.shape(
+    {
+      'Image Gallery': PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string])),
+      'Species Name': PropTypes.string.isRequired,
+      'Scientific Name': PropTypes.string.isRequired,
+      'NOAA Fisheries Region': PropTypes.string,
+    },
+  ).isRequired,
 };
 
 export default FishPanel;
