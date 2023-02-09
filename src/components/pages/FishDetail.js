@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectFish } from '../../reducers/fishSlice';
+import parse  from 'html-react-parser';
 
 const FishDetail = () => {
   const { species } = useParams();
@@ -13,16 +14,20 @@ const FishDetail = () => {
         </div>
         <div>
           <p>Fishery management</p>
-          {fish["Fishery Management"]}
+          {parse(fish["Fishery Management"])} 
         </div>
         <div>
           <h2>Distribution</h2>
-          <p>NOOA Fishing Region : {fish["NOAA Fisheries Region"]}</p> 
-          <p>Location : {fish["Location"]}</p>
-          <p>Population status : {fish["Population Status"]}</p>
-          <p>Availability : {fish["Availability"]}</p>
-          <div dangerouslySetInnerHTML={{ __html: `${fish["Availability"]}` }} />
-          <p>Appearance : {fish["Color"]}</p>
+          <p>NOOA Fishing Region</p>
+          {fish["NOAA Fisheries Region"]}
+          <p>Location</p>
+          {parse(fish["Location"])}
+          <p>Population status</p> 
+          {parse(fish["Population Status"])}
+          <p>Availability</p>
+          {parse(fish["Availability"])}
+          <p>Appearance</p>
+          {parse(fish["Color"])}
         </div>
         <div>
           <h2>Nutional information</h2>

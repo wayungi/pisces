@@ -1,11 +1,7 @@
-/** @format */
-
 import React, { useState } from 'react';
-import missing from '../../images/missing.jpg';
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
-import { Link } from 'react-router-dom';
 
-const FishPanel = ({ fish }) => {
+const FishPane = ({ fish }) => {
   let images = [];
   if (fish['Image Gallery'] === null) {
     images.push({ src: '' });
@@ -23,7 +19,6 @@ const FishPanel = ({ fish }) => {
 
   return (
     <article>
-      <Link to={`fish/${fish['Scientific Name']}`}>
         <h2>{fish['Species Name']}</h2>
         <div>
           <img src={images[index].src} alt="fish images" />
@@ -36,15 +31,8 @@ const FishPanel = ({ fish }) => {
             </button>
           </div>
         </div>
-        <p>
-          Scientific name: <span>{fish['Scientific Name']}</span>
-        </p>
-        <p>
-          NOAA Fisherires region: <span>{fish['NOAA Fisheries Region']}</span>
-        </p>
-      </Link>
     </article>
   );
 };
 
-export default FishPanel;
+export default FishPane;
