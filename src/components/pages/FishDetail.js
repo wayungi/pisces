@@ -9,6 +9,9 @@ const FishDetail = () => {
   return (
     <section>
         <div>
+
+        </div>
+        <div>
           <p>Fishery management</p>
           {fish["Fishery Management"]}
         </div>
@@ -18,6 +21,7 @@ const FishDetail = () => {
           <p>Location : {fish["Location"]}</p>
           <p>Population status : {fish["Population Status"]}</p>
           <p>Availability : {fish["Availability"]}</p>
+          <div dangerouslySetInnerHTML={{ __html: `${fish["Availability"]}` }} />
           <p>Appearance : {fish["Color"]}</p>
         </div>
         <div>
