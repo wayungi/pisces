@@ -22,18 +22,18 @@ const FishPanel = ({ fish }) => {
   const prevImage = () => (index > 0 ? setIndex((prevIndex) => prevIndex - 1) : index);
 
   return (
-    <article className="border-2 border-black">
+    <article className="border-2 border-black rounded-md">
       <Link to={`fish/${fish['Scientific Name']}`}>
-        <h2>{fish['Species Name']}</h2>
+        <h2 className="text-center font-bold text-gray-600">{fish['Species Name']}</h2>
         <div>
           <img src={images[index].src} alt="fish images" />
         </div>
       </Link>
-      <div>
-        <button type="button">
+      <div className="flex flex-row justify-center">
+        <button type="button" className="py-1 px-8 border-2 border-gray-700 rounded-md mr-10">
           <GrFormPrevious onClick={() => prevImage()} />
         </button>
-        <button type="button">
+        <button type="button" className="py-1 px-8 border-2 border-gray-700 rounded-md">
           <GrFormNext onClick={() => nextImage()} />
         </button>
       </div>
