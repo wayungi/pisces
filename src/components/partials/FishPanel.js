@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 /** @format */
 
 import React, { useState } from 'react';
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import missing from '../../images/missing.jpg';
 
 const FishPanel = ({ fish }) => {
@@ -23,7 +24,7 @@ const FishPanel = ({ fish }) => {
   const prevImage = () => (index > 0 ? setIndex((prevIndex) => prevIndex - 1) : index);
 
   return (
-    <article className="">
+    <article>
       <Link to={`fish/${fish['Scientific Name']}`}>
         <h2 className="text-center font-bold text-gray-600">{fish['Species Name']}</h2>
         <div className="min-w-full">
@@ -52,15 +53,20 @@ const FishPanel = ({ fish }) => {
   );
 };
 
-FishPanel.propTypes = {
-  fish: PropTypes.shape(
-    {
-      'Image Gallery': PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.string), PropTypes.any, PropTypes.shape({ src: '' })]),
-      'Species Name': PropTypes.string,
-      'Scientific Name': PropTypes.string,
-      'NOAA Fisheries Region': PropTypes.string,
-    },
-  ).isRequired,
-};
+// FishPanel.propTypes = {
+//   fish: PropTypes.shape(
+//     {
+//       'Image Gallery':
+//         PropTypes.oneOfType(
+// [PropTypes.arrayOf(PropTypes.string),
+// PropTypes.any,
+// PropTypes.shape({ src: '' })]
+// ),
+//       'Species Name': PropTypes.string,
+//       'Scientific Name': PropTypes.string,
+//       'NOAA Fisheries Region': PropTypes.string,
+//     },
+//   ).isRequired,
+// };
 
 export default FishPanel;
