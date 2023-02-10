@@ -9,43 +9,47 @@ const FishDetail = () => {
   const { species } = useParams();
   const fish = useSelector((state) => selectFish(state, species));
   return (
-    <section>
+    <section className="mx-2">
       <FishPane fish={fish} />
       <div>
-        <p>Fishery management</p>
+        <h1 className="pt-3 pb-2 font-bold text-gray-600 text-2xl">Fishery management</h1>
         {parse(fish['Fishery Management'])}
       </div>
       <div>
-        <h2>Distribution</h2>
-        <p>NOOA Fishing Region</p>
-        {fish['NOAA Fisheries Region']}
-        <p>Location</p>
+        <h2 className="pt-2 text-gray-600 text-xl">Distribution</h2>
+        <div className="flex flex-row">
+          <p>NOOA Fishing Region</p>
+          {fish['NOAA Fisheries Region']}
+        </div>
+        <p className="pt-2 text-gray-600 text-xl">Location</p>
         {parse(fish.Location)}
-        <p>Population status</p>
+        <p className="pt-2 text-gray-600 text-xl">Population status</p>
         {parse(fish['Population Status'])}
-        <p>Availability</p>
+        <p className="pt-2 text-gray-600 text-xl">Availability</p>
         {parse(fish.Availability)}
-        <p>Appearance</p>
+        <p className="pt-2 text-gray-600 text-xl">Appearance</p>
         {parse(fish.Color)}
       </div>
       <div>
-        <h2>Nutional information</h2>
-        <p>
-          Calories:
-          {fish.Calories}
-        </p>
-        <p>
-          Cabohydrates:
-          {fish.Carbohydrate}
-        </p>
-        <p>
-          Cholesterol:
-          {fish.Cholesterol}
-        </p>
-        <p>
-          Cabohydrates:
-          {fish.Carbohydrate}
-        </p>
+        <h2 className="pt-2 text-gray-600 text-xl">Nutional information</h2>
+        <table>
+          <thead>
+            <td>Item</td>
+            <td>Quantity</td>
+          </thead>
+          <tr>
+            <td>Calories</td>
+            <td>{fish.Calories}</td>
+          </tr>
+          <tr>
+            <td>Cabohydrates</td>
+            <td>{fish.Carbohydrate}</td>
+          </tr>
+          <tr>
+            <td> Cholesterol</td>
+            <td>{fish.Cholesterol}</td>
+          </tr>
+        </table>
       </div>
     </section>
   );

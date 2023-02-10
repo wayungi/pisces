@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 import PropTypes from 'prop-types';
+import missing from '../../images/missing.jpg';
 
 const FishPane = ({ fish }) => {
   let images = [];
   if (fish['Image Gallery'] === null) {
-    images.push({ src: '' });
+    images.push({ src: `${missing}` });
   } else if (Array.isArray(fish['Image Gallery'])) {
     images = fish['Image Gallery'];
   } else {
@@ -20,17 +21,17 @@ const FishPane = ({ fish }) => {
 
   return (
     <article>
-      <h2>{fish['Species Name']}</h2>
-      <div>
-        <img src={images[index].src} alt="fish images" />
-        <div>
-          <button type="button">
-            <GrFormPrevious onClick={() => prevImage()} />
-          </button>
-          <button type="button">
-            <GrFormNext onClick={() => nextImage()} />
-          </button>
-        </div>
+      <h2 className="text-center font-bold text-gray-600">{fish['Species Name']}</h2>
+      <div className="min-w-full">
+        <img src={images[index].src} alt="fish images" className="min-w-full rounded-md" />
+      </div>
+      <div className="flex flex-row justify-center my-4">
+        <button type="button" className="py-1 px-8 border-2 border-gray-700 rounded-md mr-10">
+          <GrFormPrevious onClick={() => prevImage()} />
+        </button>
+        <button type="button" className="py-1 px-8 border-2 border-gray-700 rounded-md">
+          <GrFormNext onClick={() => nextImage()} />
+        </button>
       </div>
     </article>
   );

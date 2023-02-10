@@ -74,4 +74,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ******** how to run the appication in development*******************
 npm start
 json-server --watch db.json -p 3001
-
+npm run dev
