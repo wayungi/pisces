@@ -8,7 +8,6 @@ const Navbar = () => {
   const [showModalWindow, setModalWindow] = useState(false);
 
   const toggleModal = () => {
-    console.log('clicked');
     setModalWindow((prevState) => !prevState);
   };
 
