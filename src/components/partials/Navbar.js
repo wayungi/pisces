@@ -8,12 +8,13 @@ const Navbar = () => {
   const [showModalWindow, setModalWindow] = useState(false);
 
   const toggleModal = () => {
+    console.log('clicked');
     setModalWindow((prevState) => !prevState);
   };
 
   return (
     <nav>
-      {showModalWindow && <Modal />}
+      {showModalWindow && <Modal modal={toggleModal} />}
       <ul className="flex flex-row items-center">
         <li className="mx-3 cursor-pointer"><GiHamburgerMenu onClick={toggleModal} /></li>
         <li className="grow">
