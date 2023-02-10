@@ -16,8 +16,6 @@ const FishPanel = ({ fish }) => {
     images = [fish['Image Gallery']];
   }
 
-  console.log(missing);
-
   const [index, setIndex] = useState(0);
   const nextImage = () => (
     index < images.length - 1 ? setIndex((prevIndex) => prevIndex + 1) : index
@@ -25,11 +23,11 @@ const FishPanel = ({ fish }) => {
   const prevImage = () => (index > 0 ? setIndex((prevIndex) => prevIndex - 1) : index);
 
   return (
-    <article className="border-2 border-black rounded-md">
+    <article className="">
       <Link to={`fish/${fish['Scientific Name']}`}>
         <h2 className="text-center font-bold text-gray-600">{fish['Species Name']}</h2>
-        <div className="border-2 border-gray-600 min-w-full">
-          <img src={images[index].src} alt="fish images" className="min-w-full" />
+        <div className="min-w-full">
+          <img src={images[index].src} alt="fish images" className="min-w-full rounded-md" />
         </div>
       </Link>
       <div className="flex flex-row justify-center my-4">

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 import { selectAllFish } from '../../reducers/fishSlice';
 import FishPanel from './FishPanel';
 
@@ -27,12 +26,10 @@ const FishGrid = () => {
   return (
     <section className="mt-8 space-y-6">
       { fishPanels }
-      <button type="button" onClick={() => prev()}>
-        <GrFormPrevious />
-      </button>
-      <button type="button" onClick={() => next()}>
-        <GrFormNext />
-      </button>
+      <div className="flex flex-row justify-between mx-7 py-8">
+        <button type="button" onClick={() => prev()} className="px-4 py-1 bg-slate-900 text-white rounded-sm">Previous</button>
+        <button type="button" onClick={() => next()} className="px-4 py-1 bg-slate-900 text-white rounded-sm">Next</button>
+      </div>
     </section>
   );
 };
