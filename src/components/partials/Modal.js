@@ -9,7 +9,7 @@ const Modal = ({ modal }) => (
     <div className="py-7">
       <AiOutlineClose className="text-3xl cursor-pointer" onClick={modal} />
     </div>
-    <NavLink to="/" element={<HomePage />} className="text-2xl">Home</NavLink>
+    <NavLink to="/" element={<HomePage />} className="text-2xl" onClick={modal}>Home</NavLink>
   </section>
 );
 
