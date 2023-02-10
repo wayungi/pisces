@@ -4,16 +4,19 @@ import React, { useState } from 'react';
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import missing from '../../images/missing.jpg';
 
 const FishPanel = ({ fish }) => {
   let images = [];
   if (fish['Image Gallery'] === null) {
-    images.push({ src: '' });
+    images.push({ src: `${missing}` });
   } else if (Array.isArray(fish['Image Gallery'])) {
     images = fish['Image Gallery'];
   } else {
     images = [fish['Image Gallery']];
   }
+
+  console.log(missing);
 
   const [index, setIndex] = useState(0);
   const nextImage = () => (
@@ -25,11 +28,11 @@ const FishPanel = ({ fish }) => {
     <article className="border-2 border-black rounded-md">
       <Link to={`fish/${fish['Scientific Name']}`}>
         <h2 className="text-center font-bold text-gray-600">{fish['Species Name']}</h2>
-        <div>
-          <img src={images[index].src} alt="fish images" />
+        <div className="border-2 border-gray-600 min-w-full">
+          <img src={images[index].src} alt="fish images" className="min-w-full" />
         </div>
       </Link>
-      <div className="flex flex-row justify-center">
+      <div className="flex flex-row justify-center my-4">
         <button type="button" className="py-1 px-8 border-2 border-gray-700 rounded-md mr-10">
           <GrFormPrevious onClick={() => prevImage()} />
         </button>
@@ -37,14 +40,16 @@ const FishPanel = ({ fish }) => {
           <GrFormNext onClick={() => nextImage()} />
         </button>
       </div>
-      <p>
-        Scientific name:
-        <span>{fish['Scientific Name']}</span>
-      </p>
-      <p>
-        NOAA Fisherires region:
-        <span>{fish['NOAA Fisheries Region']}</span>
-      </p>
+      <div>
+        <p className="text-center">
+          <span className="font-bold pr-4 text-blue-300">Scientific name</span>
+          <span className="font-bold text-green-300">{fish['Scientific Name']}</span>
+        </p>
+        <p className="text-center">
+          <span className="font-bold pr-4 text-blue-300">NOAA Fisherires region</span>
+          <span className="font-bold text-green-300">{fish['NOAA Fisheries Region']}</span>
+        </p>
+      </div>
     </article>
   );
 };
