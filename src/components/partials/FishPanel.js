@@ -22,7 +22,7 @@ const FishPanel = ({ fish }) => {
   const prevImage = () => (index > 0 ? setIndex((prevIndex) => prevIndex - 1) : index);
 
   return (
-    <article className="">
+    <article className="border-2 border-black">
       <Link to={`fish/${fish['Scientific Name']}`}>
         <h2>{fish['Species Name']}</h2>
         <div>
