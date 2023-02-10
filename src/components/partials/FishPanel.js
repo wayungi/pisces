@@ -54,9 +54,9 @@ const FishPanel = ({ fish }) => {
 FishPanel.propTypes = {
   fish: PropTypes.shape(
     {
-      'Image Gallery': PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string])),
-      'Species Name': PropTypes.string.isRequired,
-      'Scientific Name': PropTypes.string.isRequired,
+      'Image Gallery': PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.string), PropTypes.any, PropTypes.shape({ src: '' })]),
+      'Species Name': PropTypes.string,
+      'Scientific Name': PropTypes.string,
       'NOAA Fisheries Region': PropTypes.string,
     },
   ).isRequired,
