@@ -25,7 +25,7 @@ const FishGrid = () => {
   const fishPanels = fishPaginatedList.map((fish) => <FishPanel fish={fish} key={fish['Scientific Name']} />);
 
   return (
-    <section>
+    <section className="">
       { fishPanels }
       <button type="button" onClick={() => prev()}>
         <GrFormPrevious />

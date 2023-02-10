@@ -9,7 +9,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <main className="App bg-gray-50">
+      <main className="App bg-gray-50 mx-2">
         <Routes>
           <Route index element={<HomePage />} />
           <Route path="fish/:species" element={<FishDetail />} />
