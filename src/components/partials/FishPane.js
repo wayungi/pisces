@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 import PropTypes from 'prop-types';
+import missing from '../../images/missing.jpg';
 
 const FishPane = ({ fish }) => {
   let images = [];
   if (fish['Image Gallery'] === null) {
-    images.push({ src: '' });
+    images.push({ src: `${missing}` });
   } else if (Array.isArray(fish['Image Gallery'])) {
     images = fish['Image Gallery'];
   } else {
